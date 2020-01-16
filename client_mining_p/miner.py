@@ -53,6 +53,7 @@ if __name__ == '__main__':
 
     # Run forever until interrupted
     coins = 0
+    total_time = 0
     while True:
         r = requests.get(url=node + "/last_block")
         start_time = time.time()
@@ -72,14 +73,15 @@ if __name__ == '__main__':
         post_data = {"proof": new_proof, "id": id}
 
         r2 = requests.post(url=node + "/mine", json=post_data)
-        # print(r2.json())
         try:
             new_data = r2.json()
             if new_data['message'] == 'New Block Forged':
                 end_time = time.time()
                 coins += 1
+                total_time += end_time - start_time
                 print(f"{end_time - start_time} seconds")
                 print(f'You now have {coins} coins!')
+                print(f'Average Time: {total_time / coins}')
             else:
                 end_time = time.time()
                 print(f"{end_time - start_time} seconds")

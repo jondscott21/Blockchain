@@ -149,9 +149,9 @@ def mine():
         return jsonify(response), 200
     else:
         response = {
-            'message': 'Invalid proof'
+            'message': 'Invalid proof, or already submitted'
         }
-        return jsonify(response), 400
+        return jsonify(response), 200
     # response = {
     #     'new_block': block
     # }
