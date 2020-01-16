@@ -53,6 +53,7 @@ function App() {
   }, [login, chain])
   console.log(username)
   console.log(balance)
+  console.log(chain)
   console.log(transactions)
   return (
     <div className="App">
@@ -69,7 +70,7 @@ function App() {
           <input name='username' onChange={handleChange} value={username}></input>
           <button>Log In</button>
         </form> : <>
-          {transactions.length > 1 && transactions.map(transaction => <Transaction transaction={transaction} />)}
+          {transactions.length > 0 && transactions.map(transaction => <Transaction transaction={transaction} />)}
         </>}
       </div>
     </div>

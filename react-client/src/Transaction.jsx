@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 const Transaction = (props) => {
-    let date = new Date(props.transaction.time_stamp)
+    let date = new Date(props.transaction.time_stamp *1000)
     console.log(date)
     return (
         <div className='transaction'>
