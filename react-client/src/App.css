@@ -4,7 +4,7 @@
   /* flex-direction: column; */
   /* align-items: center;
   justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  font-size: 100%;
   color: white;
 }
 
@@ -12,24 +12,28 @@
   background-color: black;
   min-height: 10vh;
   display: flex;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  /* font-size: calc(10px + 2vmin); */
   color: white;
   justify-content: space-between;
 }
 
 .App-content {
-  margin: 50vh auto 0 auto;
+  /* margin: 50vh auto 0 auto; */
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .transaction {
-  background: rgb(121, 120, 134);
+  background: black;
   border: black solid 1px;
+  width: 90%;
   margin: 5px;
   padding: 5px;
+  display: flex;
+  justify-content: space-between;
 
 }

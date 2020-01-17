@@ -68,17 +68,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h3 style={{justifySelf: 'flex-start'}}>Your Lambda Wallet</h3>
+        <h3>Your Lambda Wallet</h3>
         {login && <>
-          <button onClick={refresh}>Refresh</button>
+          <div style={{fontSize: '2rem', cursor: 'pointer'}} onClick={refresh}>{String.fromCharCode(8634)}</div>
           <button onClick={handleLogOut}>Log Out</button>
         </>}
       </header>
-      {login && <>
-        <h3>{username}</h3>
-        <h3>Coin Balance: {balance}</h3>
-      </>}
       <div className='App-content'>
+        {login && <>
+          <h3>{username}</h3>
+          <h3>Coin Balance: {balance}</h3>
+        </>}
         {!login ? <form onSubmit={handleLogin}>
           <input name='username' onChange={handleChange} value={username}></input>
           <button>Log In</button>
